@@ -11,6 +11,15 @@ from torch.utils.data import DataLoader
 from rankseg import RankSEG
 
 
+def load_zerocrack_checkpoint(model, checkpoint_path, device):
+    state_dict = torch.load(checkpoint_path, map_location=device, weights_only=False)
+    state_dict = {
+        (k.replace("sam3_vit.", "zerocrack_vit.", 1) if k.startswith("sam3_vit.") else k): v
+        for k, v in state_dict.items()
+    }
+    model.load_state_dict(state_dict, strict=True)
+
+
 def save_prediction(binary_mask, raw_image_path, save_path, name, overlay_alpha=0.3):
     """
     保存黑白掩码图，并生成仅在 Mask 区域着色的蓝色覆膜图。
@@ -70,7 +79,7 @@ def main():
 
     # 加载模型
     model = ZeroCrack(img_size=input_size).to(device)
-    model.load_state_dict(torch.load(args.checkpoint, map_location=device, weights_only=False), strict=True)
+    load_zerocrack_checkpoint(model, args.checkpoint, device)
     model.eval()
 
     print(f"已加载模型: {args.checkpoint}")
