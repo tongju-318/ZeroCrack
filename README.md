@@ -9,6 +9,8 @@
   ·
   <a href="#quick-start">Quick Start</a>
   ·
+  <a href="#model-weights">Model Weights</a>
+  ·
   <a href="#visual-results">Visual Results</a>
   ·
   <a href="#training">Training</a>
@@ -71,9 +73,34 @@ Install PyTorch and TorchVision according to your CUDA version from the official
 <details>
 <summary><strong>Checkpoint requirement</strong></summary>
 
-Download the SAM3 pretrained checkpoint following the official SAM3 release instructions. The training script expects this checkpoint through `--zerocrack_path`.
+Download the SAM3 pretrained checkpoint before training. The training script expects this checkpoint through `--zerocrack_path`.
 
 </details>
+
+## Model Weights
+
+The SAM3 weight and the ZeroCrack pretrained weight are available from Baidu Netdisk:
+
+<p>
+  <a href="https://pan.baidu.com/s/1zXr7P68CTS-_lyQ_id3GJA?pwd=zero">
+    <img alt="Download weights" src="https://img.shields.io/badge/Baidu%20Netdisk-Download%20Weights-1677FF?style=for-the-badge">
+  </a>
+</p>
+
+```text
+Link: https://pan.baidu.com/s/1zXr7P68CTS-_lyQ_id3GJA?pwd=zero
+Code: zero
+```
+
+Suggested local layout:
+
+```text
+weights/
+`-- sam3.pt
+
+checkpoint/
+`-- ZeroCrack.pth
+```
 
 ## Repository Structure
 

@@ -9,6 +9,8 @@
   ·
   <a href="#快速开始">快速开始</a>
   ·
+  <a href="#模型权重">模型权重</a>
+  ·
   <a href="#可视化结果">可视化结果</a>
   ·
   <a href="#训练">训练</a>
@@ -71,9 +73,34 @@ pip install -r requirements.txt
 <details>
 <summary><strong>预训练权重说明</strong></summary>
 
-请按照 SAM3 官方发布说明下载 SAM3 预训练 checkpoint。训练脚本通过 `--zerocrack_path` 参数读取该权重文件。
+训练前请先下载 SAM3 预训练 checkpoint。训练脚本通过 `--zerocrack_path` 参数读取该权重文件。
 
 </details>
+
+## 模型权重
+
+SAM3 权重和 ZeroCrack 预训练权重可通过百度网盘下载：
+
+<p>
+  <a href="https://pan.baidu.com/s/1zXr7P68CTS-_lyQ_id3GJA?pwd=zero">
+    <img alt="下载模型权重" src="https://img.shields.io/badge/百度网盘-下载权重-1677FF?style=for-the-badge">
+  </a>
+</p>
+
+```text
+链接: https://pan.baidu.com/s/1zXr7P68CTS-_lyQ_id3GJA?pwd=zero
+提取码: zero
+```
+
+推荐本地目录：
+
+```text
+weights/
+`-- sam3.pt
+
+checkpoint/
+`-- ZeroCrack.pth
+```
 
 ## 仓库结构
 
